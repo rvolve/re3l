@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.min.js"></script> <!-- probably want to download to your local server -->
+  		<script src="http://127.0.0.1:10000/socket.io/socket.io.js"></script>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<script src="js/reality-0.3.min.js" type="text/javascript"></script>
+		
+	</head>
+	<body>
+	
+		<script>
+			$(document).ready(function()
+			{
+				var realityOptions = {
+				      "parentServer" :  'http://127.0.0.1:10000',
+				      "parentDatabase" : 'voxel_memory_parent',
+				      "eyeX" : 409266449,
+				      "eyeY" : 360715570,
+				      "eyeZ" : 629317600,
+				      "yaw" : -3.0, 
+				      "pitch" : 0.1,
+				      "roll" : 0,
+				      "outputWidth" : 400,
+				      "outputHeight" : 260,
+				      "raysWidth" : 200,  
+				      "raysHeight" : 130, 
+				      "canvas" : 'mycanvas'
+				}
+					
+				//These browsers use slightly lower resolution because their
+				//javascript engines aren't as fast.
+				if (jQuery.browser.mozilla) {
+					realityOptions.raysWidth = 140;
+					realityOptions.raysHeight = 91;
+				}
+				
+				if (jQuery.browser.msie) {
+					realityOptions.raysWidth = 140;
+					realityOptions.raysHeight = 91;
+				}
+					
+				reality.prepareScreen(realityOptions);
+				 
+				reality.mainLoop();
+			
+			});
+		</script>
+		<canvas id="mycanvas" width="400" height="260" tabindex="1"></canvas>
+		<br/>
+		Re3l Demo - 100% Javascript<br>
+		Keys: Click inside window, then: cursor keys (move and turn), rf (up/down), (1/2 look up and down - experimental)<br/>
+
+		
+		
+	
+	
+	</body>
+	
+</html>
