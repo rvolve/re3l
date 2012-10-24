@@ -75,10 +75,10 @@ var dbHostname = "127.0.0.1";
 var dbUser = "YOUR MySQL Username here";
 var dbPassword = "YOUR MySQL Password here"; 
 var re3lPort = "10000";
+var re3lLogging = false;		//Switch to true for logging
 
 
-
-var io = require('socket.io').listen(re3lPort);
+var io = require('socket.io').listen(re3lPort, { log: re3lLogging });
 
 
 /* TODO fix these errors:
