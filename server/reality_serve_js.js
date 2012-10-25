@@ -48,7 +48,7 @@
 	E.g.
 	mysql -u root -p <reality_YOUR_MODEL.sql
 
-	You can convert 3D models into Re3l models from http://rvolve.com/create_reality_model.php
+	You can convert 3D models into Re3l models from http://re3l.org/create.php
 	
 
 	Run the node server
